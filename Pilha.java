@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Pilha {
 
     public int dados[];
@@ -38,5 +40,13 @@ public class Pilha {
             System.out.println("Pilha vazia");
             return -1;
         }
+    }
+
+    public ArrayList<Integer> valoresPilha() {
+        ArrayList<Integer> valores = new ArrayList<>();
+        for (int i = 0; i <= topo; i++) {
+            valores.add(dados[i]);
+        }
+        return valores;
     }
 }
