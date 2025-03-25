@@ -7,8 +7,6 @@ public class Main {
         pilha.insere(30);
 
         System.out.println("Topo da pilha: " + pilha.topo());
-
-        System.out.println("Valores da pilha: " + pilha.valoresPilha());
         
         pilha.remover();
 
