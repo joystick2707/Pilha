@@ -1,7 +1,6 @@
-import java.util.ArrayList;
+//Trabalho de Bryan Strey, Victor Luis
 
 public class Pilha {
-
     public int dados[];
     public int topo = -1;
 
@@ -25,9 +24,10 @@ public class Pilha {
         if (topo >= 0) {
             int valorRemovido = dados[topo];
             topo--;
+            System.out.println("Valor removido: " + valorRemovido);
             return valorRemovido;
         } else {
-            System.out.println("Pilha vazia! Não há elementos para remover.");
+            System.out.println("Pilha vazia!");
             return -1;
         }
     }
@@ -40,13 +40,5 @@ public class Pilha {
             System.out.println("Pilha vazia");
             return -1;
         }
-    }
-
-    public ArrayList<Integer> valoresPilha() {
-        ArrayList<Integer> valores = new ArrayList<>();
-        for (int i = 0; i <= topo; i++) {
-            valores.add(dados[i]);
-        }
-        return valores;
     }
 }
