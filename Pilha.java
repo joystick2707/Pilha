@@ -1,44 +1,39 @@
 //Trabalho de Bryan Strey, Victor Luis
 
 public class Pilha {
-    public int dados[];
-    public int topo = -1;
+    private Node topo;
 
-    public Pilha(int tamanho) {
-        this.dados = new int[tamanho];
-        this.topo = -1;
+    public Pilha() {
+        this.topo = null;
     }
 
-    public void insere(int valor){
-        if(topo < dados.length - 1){
-            topo ++;
-            dados[topo] = valor;
-            System.out.println("Valor inserido: " + valor);
-        }
-        else{
-            System.out.println("Pilha cheia");
-        }
+    public void insere(int valor) {
+        Node novoNo = new Node(valor);
+        novoNo.proximo = topo;
+        topo = novoNo;
+        System.out.println("Valor inserido: " + valor);
     }
 
     public int remover() {
-        if (topo >= 0) {
-            int valorRemovido = dados[topo];
-            topo--;
-            System.out.println("Valor removido: " + valorRemovido);
-            return valorRemovido;
-        } else {
+        if (topo == null) {
             System.out.println("Pilha vazia!");
             return -1;
         }
+        int valorRemovido = topo.valor;
+        topo = topo.proximo;
+        System.out.println("Valor removido: " + valorRemovido);
+        return valorRemovido;
     }
 
-    public int topo(){
-        if (topo >= 0) {
-            return dados[topo];
-        }
-        else{
+    public int topo() {
+        if (topo == null) {
             System.out.println("Pilha vazia");
             return -1;
         }
+        return topo.valor;
+    }
+
+    public boolean estaVazia() {
+        return topo == null;
     }
 }
